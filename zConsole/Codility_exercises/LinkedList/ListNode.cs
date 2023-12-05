@@ -15,5 +15,12 @@ namespace zConsole.Codility_exercises.LinkedList
             val = x;
             next = null;
         }
+        public ListNode(int val = 0, ListNode next = null)
+        {
+            val = val;
+            next = next;
+        }
+
+
     }
 }

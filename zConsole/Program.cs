@@ -12,9 +12,11 @@ using zConsole;
 using zConsole.Codility_exercises;
 using zConsole.Codility_exercises.ArrayMergeSortClassic;
 using zConsole.Codility_exercises.DictionaryHashTable;
+using zConsole.Codility_exercises.LinkedList;
 using zConsole.Codility_exercises.RecursionExamples;
 using zConsole.Codility_exercises.Stack;
 using zConsole.Codility_exercises.String;
+using ListNode = zConsole.Codility_exercises.LinkedList.ListNode;
 
 
 /*
@@ -29,6 +31,22 @@ foreach (var person in people)
 int[] nums = new int[] { 0, 0, -1 };
 
 Console.WriteLine(LongestConsecutiveSequence.LongestConsecutive(nums));
+
+ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+
+
+ListNode curr = head;
+
+Stack<int> stack = new Stack<int>();
+while (curr != null)
+{
+    stack.Push(curr.val);
+    curr = curr.next;
+}
+
+
+Console.WriteLine(ReverseLinkedListFromLeftToRightPoints.ReverseBetween(head, 2, 4));
+
 
 
 Console.ReadLine();

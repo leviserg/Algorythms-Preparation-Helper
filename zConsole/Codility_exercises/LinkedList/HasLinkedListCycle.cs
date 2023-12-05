@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zConsole.Codility_exercises.LinkedList
 {
-    public static class LinkedListCycle
+    public static class HasLinkedListCycle
     {
         public static bool HasCycle(ListNode head)
         {
