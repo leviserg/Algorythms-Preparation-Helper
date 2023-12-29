@@ -8,9 +8,9 @@ namespace zConsole.Codility_exercises.Tree
 {
     public class BTreeLongestZigZag
     {
-        public Tree Root;
+        public TreeNode Root;
 
-        public BTreeLongestZigZag(Tree root)
+        public BTreeLongestZigZag(TreeNode root)
         {
             Root = root;
         }
@@ -27,7 +27,7 @@ namespace zConsole.Codility_exercises.Tree
             return result.MaxZigZagLength;
         }
 
-        private ZigZagResult LongestZigZagPathRecursive(Tree node)
+        private ZigZagResult LongestZigZagPathRecursive(TreeNode node)
         {
             if (node == null)
             {
@@ -35,19 +35,19 @@ namespace zConsole.Codility_exercises.Tree
             }
 
             // Recursively calculate the longest zigzag path for the left and right subtrees
-            ZigZagResult leftResult = LongestZigZagPathRecursive(node.l);
-            ZigZagResult rightResult = LongestZigZagPathRecursive(node.r);
+            ZigZagResult leftResult = LongestZigZagPathRecursive(node.left);
+            ZigZagResult rightResult = LongestZigZagPathRecursive(node.right);
 
             // Initialize the maximum zigzag lengths for the current node
             int leftMax = 1;
             int rightMax = 1;
 
             // Update the maximum zigzag lengths based on the left and right subtrees
-            if (node.l != null)
+            if (node.left != null)
             {
                 leftMax = 1 + rightResult.MaxZigZagLength;
             }
-            if (node.r != null)
+            if (node.right != null)
             {
                 rightMax = 1 + leftResult.MaxZigZagLength;
             }

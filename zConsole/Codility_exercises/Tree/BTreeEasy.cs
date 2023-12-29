@@ -8,22 +8,22 @@ namespace zConsole.Codility_exercises.Tree
 {
     public class BTreeEasy
     {
-        public Tree Root;
+        public TreeNode Root;
 
         public BTreeEasy()
         {
             Root = null;
         }
 
-        private int CalculateHeight(Tree node)
+        private int CalculateHeight(TreeNode node)
         {
             if (node == null)
             {
                 return -1;
             }
 
-            int leftHeight = CalculateHeight(node.l);
-            int rightHeight = CalculateHeight(node.r);
+            int leftHeight = CalculateHeight(node.left);
+            int rightHeight = CalculateHeight(node.right);
 
             return Math.Max(leftHeight, rightHeight) + 1;
         }
@@ -35,10 +35,4 @@ namespace zConsole.Codility_exercises.Tree
         }
     }
 
-    public class Tree
-    {
-        public int x;
-        public Tree l;
-        public Tree r;
-    };
 }
