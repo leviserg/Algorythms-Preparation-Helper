@@ -18,6 +18,20 @@ namespace zConsole.Codility_exercises.Tree
             DFS(root.left); // Recursively visit the left subtree
             DFS(root.right); // Recursively visit the right subtree
         }
+
+        public bool HasPathSum(TreeNode root, int targetSum)
+        {
+
+            if (root is null)
+                return false;
+
+            if (root.left is null && root.right is null)
+                return root.val == targetSum;
+
+            return HasPathSum(root.left, targetSum - root.val) | HasPathSum(root.right, targetSum - root.val);
+
+        }
+
     }
 
     /*
