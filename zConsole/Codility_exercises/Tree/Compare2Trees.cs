@@ -64,5 +64,27 @@ namespace zConsole.Codility_exercises.Tree
                 return queue1.Count == 0 && queue2.Count == 0;
              */
         }
+
+        public static bool IsSymmetric(TreeNode root)
+        {
+            if (root is null)
+            {
+                return true;
+            }
+            return IsBranchSymmetric(root.left, root.right);
+        }
+
+        private static bool IsBranchSymmetric(TreeNode l, TreeNode r)
+        {
+            if (l is null && r is null)
+            {
+                return true;
+            }
+            if (l is null || r is null)
+            {
+                return false;
+            }
+            return (l.val == r.val) & IsBranchSymmetric(l.left, r.right) & IsBranchSymmetric(l.right, r.left);
+        }
     }
 }
