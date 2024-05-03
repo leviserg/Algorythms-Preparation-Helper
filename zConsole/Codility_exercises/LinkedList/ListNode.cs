@@ -17,8 +17,8 @@ namespace zConsole.Codility_exercises.LinkedList
         }
         public ListNode(int val = 0, ListNode next = null)
         {
-            val = val;
-            next = next;
+            this.val = val;
+            this.next = next;
         }
 
 
