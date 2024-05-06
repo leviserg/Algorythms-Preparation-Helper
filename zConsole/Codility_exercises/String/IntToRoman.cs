@@ -10,6 +10,7 @@ namespace zConsole.Codility_exercises.String
     {
         public static string ToRoman(int num)
         {
+            /*
             StringBuilder sb = new StringBuilder();
             Dictionary<int, char> dic = new Dictionary<int, char> {
                 {1,   'I'},
@@ -56,8 +57,8 @@ namespace zConsole.Codility_exercises.String
             }
 
             return sb.ToString();
-
-            /*
+            */
+            
             var map = new Dictionary<int, string>{
                 {1000, "M"},
                 {900, "CM"},
@@ -89,7 +90,7 @@ namespace zConsole.Codility_exercises.String
             }
 
             return sb.ToString();
-            */
+            
         }
 
         private static string BuildRomanForOrder(Dictionary<int, char> dic, int unit, int multiplyer)
