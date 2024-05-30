@@ -11,5 +11,16 @@ namespace zConsole.Tests
             string result = IntToRoman.ToRoman(8);
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void CheckLongPressedName()
+        {
+            string typed = "lleeelee";
+            string name = "leelee";
+
+            bool result = LongPressedName.IsLongPressedNameRefactor(name, typed);
+
+            Assert.IsTrue(result);
+        }
     }
 }
